@@ -1,0 +1,21 @@
+* {
+  box-sizing: border-box; }
+
+.submit {
+  width: 100px;
+  height: 100px;
+  -webkit-border-radius: 50px;
+  -moz-border-radius: 50px;
+  border-radius: 50px;
+  border-color: red;
+  border-width: 5px;
+  background-color: red;
+}
+
+.buzzedFirst {
+	background-color: green;
+}
+
+h1 {
+  font-size: 2em;
+}

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html ng-app="buzzIn">
+	<head>
+		<title>!nterfeud</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+		<link rel="stylesheet" href="/css/reset.css">
+		<link rel="stylesheet" href="/css/style.css">
+	</head>
+
+	<body ng-controller="BuzzerCtrl">
+		<h1>Welcome to !nterFeud</h1>
+
+		<button class="btn btn-lg" ng-hide="admin || player" ng-click="startGame()">Start a game</button>
+		<button class="btn btn-lg" ng-hide="admin || player" ng-click="joinGame()">Join a game</button>
+
+		<div ng-if="admin">
+			<button ng-click="newRound()">New Round</button>
+			<p ng-repeat="entry in entries track by $index">{{ $index + 1 }}: {{ entry }}</p>
+
+			<scoreboard></scoreboard>
+		
+		</div>
+
+		<div ng-if="player">
+			<div>
+				<h1>Enter team name</h1>
+				<input ng-model="team" type="text">
+				<button ng-click="setSocketId(team)">Set Name</button>
+			</div>
+			<div>
+				<button type="button" class="submit" class="btn btn-lg btn-danger" ng-click="buttonPress()" ng-class="{buzzedFirst: buzzed}"></button>
+			</div>
+				<h2 ng-if="tooLate">You're too slow!</h2>
+			</div>
+		</div>
+
+		<script src="socket.io/socket.io.js"></script>
+		<script src="lib/angular.js"></script>
+		<script src="lib/app.js"></script>
+		<script src="directives/scoreboard/scoreboard.js"></script>
+		<script src="controllers/ScoreCtrl.js"></script>
+		<script src="factories/ScoreFactory.js"></script>
+	</body>
+</html>
