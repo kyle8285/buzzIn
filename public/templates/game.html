@@ -1,0 +1,19 @@
+<h1>Welcome to !nterFeud</h1>
+
+<button class="btn btn-block btn-lg" ng-click="newRound()">New Round</button>
+<button class="btn btn-block btn-lg" ng-click="showScores()">Scoreboard</button>
+
+<table class="table table-bordered">
+	<tr ng-repeat="entry in entries track by $index" ng-class="{success: $index === 0}">
+		<td>{{ $index + 1 }}</td>
+		<td>{{ entry }}</td>
+		<td>
+		<rating ng-model="stars" max="3"></rating>
+		<button  class="btn btn-xs" ng-click="addToScore(stars, entry)">Add Stars</button>
+		<button class="btn btn-xs" ng-click="removeFromScore(stars, entry)">Remove Stars</button>
+		</td>
+	</tr>
+</table>
+<div ng-if="scoreboard">
+	<scoreboard></scoreboard>
+</div>

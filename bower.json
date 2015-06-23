@@ -1,0 +1,19 @@
+{
+  "name": "buzzIn",
+  "version": "0.0.0",
+  "homepage": "https://github.com/kyle8285/buzzIn",
+  "authors": [
+    "kyle8285 <kylelussier3@gmail.com>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular-bootstrap": "~0.13.0"
+  }
+}

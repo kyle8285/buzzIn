@@ -1,5 +1,12 @@
 <div ng-controller="ScoreCtrl">
 	<div id="scoreboard">
-		<h3 ng-repeat="team in teams">{{ team }} {{ scores.score }}</h3>
+		<h1>Scoreboard</h1>
+		<table class="table table-bordered">
+			<tr ng-repeat="(team, score) in scores track by $index">
+				<td>{{ team }}</td>
+				<td>{{score}}</td>
+				<td><rating ng-model="score" max="score" readonly="true"></rating></td>
+			</tr>
+		</table>
 	</div>
 </div>

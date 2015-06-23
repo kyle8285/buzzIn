@@ -1,0 +1,29 @@
+<h1>Welcome to !nterFeud</h1>
+
+<div ng-if="!teamName">
+
+	<h1>Enter team name</h1>
+
+	<input ng-model="team" type="text">
+
+	<br>
+
+	<button class="btn btn-lg" ng-click="setSocketId(team)">Set Name</button>
+
+</div>
+
+	<div ng-if="teamName">
+
+		<h2>Good Luck, {{ teamName }}</h2>
+
+		<button type="button"  class="btn-red" ng-click="buttonPress()" ng-class="{ 'btn-green': buzzed && teamName === entries[0], 'btn-yellow': buzzed && teamName !== entries[0]}"></button>
+	
+	</div>
+
+		<h2 ng-if="buzzed && teamName !== entries[0]">You're too slow!</h2>
+
+	</div>
+
+	<scoreboard></scoreboard>
+
+</div>
