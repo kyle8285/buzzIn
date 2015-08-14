@@ -31,7 +31,7 @@ app.controller('MainController', function($scope, $state, socket, SoundFactory, 
 	// $scope.rate = 3;
 
 	$scope.startGame = function() {
-		// SoundFactory.themeSong.play().fadeOut(15000);
+		SoundFactory.themeSong.play().fadeOut(15000);
 		$state.go('newGame');
 	};
 
@@ -80,7 +80,7 @@ app.controller('MainController', function($scope, $state, socket, SoundFactory, 
 
 	socket.on('sendTeam', function(team) {
 		$scope.entries.push(team);
-		// if (!$scope.buzzed) SoundFactory.buzzerSound.play();
+		if (!$scope.buzzed) SoundFactory.buzzerSound.play();
 		$scope.buzzed = true;
 		$scope.$digest();
 	})

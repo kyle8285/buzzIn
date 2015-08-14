@@ -20,16 +20,6 @@
   border-color: green;
 }
 
-body {
-  background: #1e5799; /* Old browsers */
-  background: -moz-linear-gradient(-45deg, #1e5799 0%, #7db9e8 99%); /* FF3.6+ */
-  background: -webkit-gradient(linear, left top, right bottom, color-stop(0%,#1e5799), color-stop(99%,#7db9e8)); /* Chrome,Safari4+ */
-  background: -webkit-linear-gradient(-45deg, #1e5799 0%,#7db9e8 99%); /* Chrome10+,Safari5.1+ */
-  background: -o-linear-gradient(-45deg, #1e5799 0%,#7db9e8 99%); /* Opera 11.10+ */
-  background: -ms-linear-gradient(-45deg, #1e5799 0%,#7db9e8 99%); /* IE10+ */
-  background: linear-gradient(135deg, #1e5799 0%,#7db9e8 99%); /* W3C */
-}
-
 h1 {
   font-size: 2em;
   padding: 10px;
@@ -96,12 +86,16 @@ table {
 }*/
 
 button {
+  max-width: 300px;
   margin: 20px auto;
   border-color: red;
   border-width: 3px;
   border-radius: 3px;
 }
 
+body {
+  background: #1e5799;
+}
 
 
 
